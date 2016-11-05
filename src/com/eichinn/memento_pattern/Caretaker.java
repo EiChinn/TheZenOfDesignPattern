@@ -1,19 +1,20 @@
 package com.eichinn.memento_pattern;
 
+import com.sun.istack.internal.NotNull;
+
+import java.util.HashMap;
+
 /**
  * Created by chenrong on 2016/11/5.
  */
 public class Caretaker {
-    private Memento memento;
+    private HashMap<String, Memento> mementoMap = new HashMap<>();
 
-    public Caretaker() {
+    public Memento getMemento(String tag) {
+        return mementoMap.get(tag);
     }
 
-    public Memento getMemento() {
-        return memento;
-    }
-
-    public void setMemento(Memento memento) {
-        this.memento = memento;
+    public void setMemento(@NotNull String tag, Memento memento) {
+        mementoMap.put(tag, memento);
     }
 }

@@ -14,15 +14,27 @@ public class Client {
         System.out.println("===== 初始化状态 =====");
         System.out.println(ori);
         //创建一个备忘录
-        caretaker.setMemento(ori.createMemento());
-        //修改状态
+        caretaker.setMemento("tag0", ori.createMemento());
+        //修改状态1
         ori.setState1("zzz");
         ori.setState2("yyy");
         ori.setState3("xxx");
-        System.out.println("===== 修改后状态 =====");
+        System.out.println("===== 修改后状态1 =====");
         System.out.println(ori);
-        //恢复一个备忘录
-        ori.restoreMemento(caretaker.getMemento());
+        //再创建一个备忘录
+        caretaker.setMemento("tag1", ori.createMemento());
+        //修改状态2
+        ori.setState1("ooo");
+        ori.setState2("ppp");
+        ori.setState3("qqq");
+        System.out.println("===== 修改后状态2 =====");
+        System.out.println(ori);
+        //恢复到tag1
+        ori.restoreMemento(caretaker.getMemento("tag1"));
+        System.out.println("===== 恢复后状态 =====");
+        System.out.println(ori);
+        //恢复到tag0
+        ori.restoreMemento(caretaker.getMemento("tag0"));
         System.out.println("===== 恢复后状态 =====");
         System.out.println(ori);
     }

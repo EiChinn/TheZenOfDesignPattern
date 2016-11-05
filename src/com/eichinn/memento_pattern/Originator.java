@@ -40,7 +40,11 @@ public class Originator {
 
     //恢复一个备忘录
     public void restoreMemento(Memento memento) {
-        BeanUtils.restoreProp(this, memento.getStateMap());
+        if (memento != null) {
+            BeanUtils.restoreProp(this, memento.getStateMap());
+        } else {
+            System.out.println("can't restore a null memento");
+        }
     }
 
     @Override

@@ -1,5 +1,7 @@
 package com.eichinn.memento_pattern;
 
+import java.util.HashMap;
+
 /**
  * Created by chenrong on 2016/11/5.
  */
@@ -34,14 +36,14 @@ public class Originator {
     }
 
     //创建一个备忘录
-    public Memento createMemento() {
+    public IMemento createMemento() {
         return new Memento(BeanUtils.backupProp(this));
     }
 
     //恢复一个备忘录
-    public void restoreMemento(Memento memento) {
+    public void restoreMemento(IMemento memento) {
         if (memento != null) {
-            BeanUtils.restoreProp(this, memento.getStateMap());
+            BeanUtils.restoreProp(this, ((Memento)memento).getStateMap());
         } else {
             System.out.println("can't restore a null memento");
         }
@@ -54,5 +56,22 @@ public class Originator {
                 ", state2='" + state2 + '\'' +
                 ", state3='" + state3 + '\'' +
                 '}';
+    }
+
+    //私有静态内部类，防止Originator以外的类修改备忘录
+    private static class Memento implements IMemento{
+        private HashMap<String, Object> stateMap;
+
+        private Memento(HashMap<String, Object> stateMap) {
+            this.stateMap = stateMap;
+        }
+
+        private HashMap<String, Object> getStateMap() {
+            return stateMap;
+        }
+
+        private void setStateMap(HashMap<String, Object> stateMap) {
+            this.stateMap = stateMap;
+        }
     }
 }

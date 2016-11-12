@@ -9,7 +9,7 @@ import java.util.List;
 public class Client {
     public static void main(String[] args) {
         for (Employee employee : mockEmployee()) {
-            employee.report();
+            employee.accept(new Visitor());
         }
     }
 

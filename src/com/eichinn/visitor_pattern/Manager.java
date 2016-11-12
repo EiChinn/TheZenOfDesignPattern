@@ -15,7 +15,7 @@ public class Manager extends Employee {
     }
 
     @Override
-    protected String getOtherInfo() {
-        return "performance: " + this.getPerformance() + "\t";
+    protected void accept(IVisitor visitor) {
+        visitor.visit(this);
     }
 }

@@ -15,7 +15,7 @@ public class CommonEmployee extends Employee {
     }
 
     @Override
-    protected String getOtherInfo() {
-        return "job: " + this.getJob() + "\t";
+    protected void accept(IVisitor visitor) {
+        visitor.visit(this);
     }
 }

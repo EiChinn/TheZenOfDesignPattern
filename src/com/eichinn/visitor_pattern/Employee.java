@@ -36,17 +36,8 @@ public abstract class Employee {
         this.sex = sex;
     }
 
-    protected abstract String getOtherInfo();
+    protected abstract void accept(IVisitor visitor);
 
-    public final void report() {
-        StringBuilder info = new StringBuilder(32);
-        info.append("name: ").append(this.getName()).append("\t");
-        info.append("sex: ").append(this.getSex()).append("\t");
-        info.append("salary: ").append(this.getSalary()).append("\t");
-        info.append(getOtherInfo());
-        System.out.println(info);
-
-    }
 
 
 }

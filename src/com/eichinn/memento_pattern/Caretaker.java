@@ -4,7 +4,7 @@ import com.eichinn.utils.MaxEntriesLinkedHashMap;
 import com.sun.istack.internal.NotNull;
 
 /**
- * Created by chenrong on 2016/11/5.
+ * Created by ei_chinn on 2016/11/5.
  */
 public class Caretaker {
     private static final int MAX_AMOUNT = 20;//为防止内存溢出，只保存最新的20条备份（利用MaxEntriesLinkedHashMap)

@@ -9,7 +9,7 @@ import java.lang.reflect.Method;
 import java.util.HashMap;
 
 /**
- * Created by chenrong on 2016/11/5.
+ * Created by ei_chinn on 2016/11/5.
  */
 public class BeanUtils {
     /**

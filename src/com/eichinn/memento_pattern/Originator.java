@@ -3,7 +3,7 @@ package com.eichinn.memento_pattern;
 import java.util.HashMap;
 
 /**
- * Created by chenrong on 2016/11/5.
+ * Created by ei_chinn on 2016/11/5.
  */
 public class Originator {
     //内部状态

@@ -8,5 +8,4 @@ public interface IVisitor {
 
     void visit(Manager manager);
 
-    int getTotalSalary();
 }

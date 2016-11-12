@@ -8,12 +8,14 @@ import java.util.List;
  */
 public class Client {
     public static void main(String[] args) {
-        IVisitor visitor = new Visitor();
+        IShowVisitor showVisitor = new ShowVisitor();
+        ITotalVisitor totalVisitor = new TotalVisitor();
         for (Employee employee : mockEmployee()) {
-            employee.accept(visitor);
+            employee.accept(showVisitor);
+            employee.accept(totalVisitor);
         }
-        System.out.println("total salary is " + visitor.getTotalSalary());
-
+        showVisitor.report();
+        totalVisitor.totalSalary();
     }
 
     private static List<Employee> mockEmployee() {

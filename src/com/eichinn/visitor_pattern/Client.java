@@ -8,9 +8,12 @@ import java.util.List;
  */
 public class Client {
     public static void main(String[] args) {
+        IVisitor visitor = new Visitor();
         for (Employee employee : mockEmployee()) {
-            employee.accept(new Visitor());
+            employee.accept(visitor);
         }
+        System.out.println("total salary is " + visitor.getTotalSalary());
+
     }
 
     private static List<Employee> mockEmployee() {

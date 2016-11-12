@@ -6,11 +6,13 @@ package com.eichinn.visitor_pattern;
 public class Visitor implements IVisitor {
     @Override
     public void visit(CommonEmployee commonEmployee) {
+        calCommonSalary(commonEmployee);
         System.out.println(getCommonEmployeeInfo(commonEmployee));
     }
 
     @Override
     public void visit(Manager manager) {
+        calManagerSalary(manager);
         System.out.println(getManagerInfo(manager));
     }
 
@@ -33,5 +35,21 @@ public class Visitor implements IVisitor {
         return basicInfo.toString();
     }
 
+    private final static int MANAGER_COEFFICIENT = 5;
+    private final static int COMMONEMPLOYEE_COEFFICIENT = 2;
+    private int commonTotalSalary = 0;
+    private int managerTotalSalary = 0;
+    @Override
+    public int getTotalSalary() {
+        return commonTotalSalary + managerTotalSalary;
+    }
+
+    private void calManagerSalary(Manager manager) {
+        managerTotalSalary += manager.getSalary() * MANAGER_COEFFICIENT;
+    }
+
+    private void calCommonSalary(CommonEmployee commonEmployee) {
+        commonTotalSalary += commonEmployee.getSalary() * COMMONEMPLOYEE_COEFFICIENT;
+    }
 
 }

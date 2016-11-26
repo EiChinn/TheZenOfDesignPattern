@@ -13,6 +13,6 @@ public class Client {
             }
         }
 
-        SignInfo signInfo = SignInfoFactory.getSignInfo("subject1考试地点1");
+        SignInfoFactory.getSignInfo("subject1考试地点1");
     }
 }

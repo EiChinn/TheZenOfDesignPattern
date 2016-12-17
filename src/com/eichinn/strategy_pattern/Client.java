@@ -11,7 +11,8 @@ public class Client {
         context.uncompress("c:\\windows.zip", "d;\\windows");
 
         System.out.println("-------------------");
-        context = new Context(new Gzip());
+//        context = new Context(new Gzip());
+        context.setAl(new Gzip());
 
         context.compress("c:\\windows", "d;\\windows.gz");
         context.uncompress("c:\\windows.gz", "d;\\windows");

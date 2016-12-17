@@ -10,6 +10,14 @@ public class Context {
         this.al = al;
     }
 
+    public Algorithm getAl() {
+        return al;
+    }
+
+    public void setAl(Algorithm al) {
+        this.al = al;
+    }
+
     public boolean compress(String source, String to) {
         return al.compress(source, to);
     }

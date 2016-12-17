@@ -13,7 +13,7 @@ public class Client {
         System.out.println("-------------------");
         context = new Context(new Gzip());
 
-        context.compress("c:\\windows", "d;\\windows.zip");
-        context.uncompress("c:\\windows.zip", "d;\\windows");
+        context.compress("c:\\windows", "d;\\windows.gz");
+        context.uncompress("c:\\windows.gz", "d;\\windows");
     }
 }

@@ -7,13 +7,13 @@ public class Client {
     public static void main(String[] args) {
         AbstractCmd cmd = new ZipCompressCmd();
 
-        Invoke invoke = new Invoke(cmd);
+        Invoker invoker = new Invoker(cmd);
 
-        invoke.execute("c:\\windows", "d;\\windows.zip");
+        invoker.execute("c:\\windows", "d;\\windows.zip");
 
         System.out.println("------------------");
-        invoke = new Invoke(new GzipCompressCmd());
+        invoker = new Invoker(new GzipCompressCmd());
 
-        invoke.execute("c:\\windows", "d;\\windows.gz");
+        invoker.execute("c:\\windows", "d;\\windows.gz");
     }
 }
